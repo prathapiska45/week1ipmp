@@ -1,20 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void unique(vector<int>& v)
+void reverse(vector<int>& v)
 {
-      unordered_map<int,int>mp;
+       int n=v.size();
 
-      for(auto x:v)
-       mp[x]++;
-
-       for(auto x: mp)
+       for(int i=0;i<n/2;i++)
        {
-            if(x.second==1)
-             cout << "unique number=" << x.first;
+          swap(v[i],v[n-1-i]);
        }
 }
-
 
 int main()
 {
@@ -27,5 +22,8 @@ int main()
               cout<<"enter an element=";
               cin>>v[i];
          }
-             unique(v);       
-} 
+         reverse(v);
+
+         for(auto x:v)
+           cout<<x << " ";
+}

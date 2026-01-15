@@ -1,20 +1,15 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void unique(vector<int>& v)
+void arrange012(vector<int>& nums)
 {
-      unordered_map<int,int>mp;
+      sort(nums.begin(),nums.end());
 
-      for(auto x:v)
-       mp[x]++;
-
-       for(auto x: mp)
-       {
-            if(x.second==1)
-             cout << "unique number=" << x.first;
-       }
+      for(auto x: nums)
+      {
+          cout<< x << " ";
+      }
 }
-
 
 int main()
 {
@@ -27,5 +22,5 @@ int main()
               cout<<"enter an element=";
               cin>>v[i];
          }
-             unique(v);       
-} 
+         arrange012(v);
+}

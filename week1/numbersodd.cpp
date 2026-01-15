@@ -1,20 +1,24 @@
 #include<bits/stdc++.h>
 using namespace std;
 
-void unique(vector<int>& v)
+void oddoccurences(vector<int>& v)
 {
       unordered_map<int,int>mp;
-
-      for(auto x:v)
-       mp[x]++;
+        vector<int> c;
+      for(int i=0;i<v.size();i++)
+       mp[v[i]]++;
 
        for(auto x: mp)
        {
-            if(x.second==1)
-             cout << "unique number=" << x.first;
+           if(x.second%2!=0)
+           {
+                c.push_back(x.first);   
+           }
        }
-}
 
+       for(auto x: c)
+       cout<<x<< " ";
+}
 
 int main()
 {
@@ -27,5 +31,5 @@ int main()
               cout<<"enter an element=";
               cin>>v[i];
          }
-             unique(v);       
-} 
+           oddoccurences(v);
+}
